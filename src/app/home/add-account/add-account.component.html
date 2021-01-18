@@ -1,0 +1,32 @@
+<div class="container-form">
+    <div class="caption">
+        <p>Add Account To Start Creating Budget</p>
+    </div>
+    <form class="account-form" [formGroup]="accountForm" (ngSubmit)="saveForm()">
+        <div style="display: flex; flex-direction: column;">
+            <div class="form-group">
+                <label>Select Account Type :</label>
+                <p-dropdown
+                    placeholder="Select type of account"
+                    [options]="typeOfAccount"
+                    optionLabel="name"
+                    optionValue="name"
+                    formControlName="type"
+                    class="form-control"
+                >
+                </p-dropdown>
+            </div>
+            <div class="form-group">
+                <label>Enter Nickname For Account :</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="enter nickname">
+            </div>
+            <div class="form-group">
+                <label>Enter Your Current Account Balance :</label>
+                <input type="number" class="form-control" formControlName="balance" placeholder="enter current balance">
+            </div>
+        </div>
+        <div class="btn-group">
+            <button value="submit" class="btn btn-primary">SAVE</button>
+        </div>
+    </form>
+</div>

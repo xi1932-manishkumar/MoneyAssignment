@@ -1,0 +1,21 @@
+<div style="padding-left: 180px" *ngIf="budgetList">
+        <div class="table-caption">
+            <p>All Budgets : </p>
+        </div>
+        <table class="budget-table">
+                <tr class="table-row">
+                    <th class="table-col">Name</th>
+                    <th class="table-col">First Month</th>
+                    <th class="table-col">Last Month</th>
+                    <th class="table-col">Last Used</th>
+                </tr>
+                <tr *ngFor= "let budget of budgetList" class="table-row" (click)="goToBudgetDetails(budget.id)">
+                    <td class="table-col">
+                        {{ budget.name }}
+                    </td>
+                    <td class="table-col">{{ budget.first_month }}</td>
+                    <td class="table-col">{{ budget.last_month }}</td>
+                    <td class="table-col">Last Used On {{ budget.last_modified_on | date }}</td>
+                </tr>
+     </table>
+</div>
