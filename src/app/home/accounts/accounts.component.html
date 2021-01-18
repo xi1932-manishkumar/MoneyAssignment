@@ -1,0 +1,30 @@
+<div style="padding-left: 180px" *ngIf="accountsData">
+    <div class="table-caption" style="display: flex; justify-content: space-between;">
+        <p>All Accounts </p>
+        <button style="margin-right: 100px;" (click)="goToAddAccount()">Add Account</button>
+    </div>
+    <table class="accounts-table">
+            <tr class="table-row">
+                <th class="table-col">ACCOUNT</th>
+                <th class="table-col">DATE</th>
+                <th class="table-col">PAYEE</th>
+                <th class="table-col">CATEGORY</th>
+                <th class="table-col">MEMO</th>
+                <th class="table-col">OUTFLOW</th>
+                <th class="table-col">INFLOW</th>
+            </tr>
+            <ng-container *ngFor= "let account of accountsData">
+                <tr *ngIf="!isDeleted" class="table-row">
+                    <td class="table-col">
+                        {{ account.name }}
+                    </td>
+                    <td class="table-col">{{ todaysDate | date }}</td>
+                    <td class="table-col">{{ account.payeeName }}</td>
+                    <td class="table-col">{{ account.type }}</td>
+                    <td class="table-col">{{ account.note }}</td>
+                    <td class="table-col">{{ account.uncleared_balance }}</td>
+                    <td class="table-col">{{ account.balance }}</td>
+                </tr>
+            </ng-container>
+    </table>
+</div>

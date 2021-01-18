@@ -1,0 +1,19 @@
+<div style="padding-left: 180px" *ngIf="payeeList">
+    <div class="table-caption" style="display: flex;">
+         <p>All Payees </p>
+    </div>
+    <table class="payee-table">
+            <tr class="table-row">
+                <th class="table-col">Name</th>
+                <th class="table-col">Account Id</th>
+            </tr>
+            <ng-container>
+                <tr *ngFor= "let payee of payeeList" class="table-row" (click)="goToPayeeDetails(payee.id)">
+                    <td class="table-col">
+                        {{ payee.name }}
+                    </td>
+                    <td class="table-col">{{ payee.transfer_account_id }}</td>
+                </tr>
+            </ng-container>
+    </table>
+</div>

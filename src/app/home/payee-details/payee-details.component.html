@@ -1,0 +1,22 @@
+<div style="padding-left: 180px">
+    <div class="table-caption">
+        <p>All Transactions : </p>
+    </div>
+    <div *ngIf="payeeTransactions.length === 0">
+        <p>No Transaction Available for this payee!!!</p>
+    </div>
+        <table class="transaction-table" *ngIf="payeeTransactions.length > 1">
+            <tr class="table-row">
+                <th class="table-col">Name</th>
+                <th class="table-col">Amount</th>
+            </tr>
+            <tr *ngFor= "let transaction of payeeTransactions" class="table-row">
+                <td class="table-col">
+                    {{ transaction.name }}
+                </td>
+                <td class="table-col">
+                    {{ transaction.amount }}
+                </td>
+            </tr>
+    </table>
+</div>
