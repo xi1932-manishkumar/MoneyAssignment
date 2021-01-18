@@ -59,6 +59,7 @@ export class AccountsComponent implements OnInit {
 
   goToAddAccount() {
     this.router.navigate([`home/${this.budgetId}/add-account`]);
+    console.log("hi");
   }
-
+  
 }
